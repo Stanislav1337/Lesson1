@@ -94,7 +94,7 @@ Console.WriteLine(max);*/
 
 4 -> да
 -3 -> нет
-7 -> нет */
+7 -> нет 
 
 int module (int a){
     if (a >= 0) {
@@ -114,3 +114,58 @@ if (number == 0){
 }else{
 Console.WriteLine("Это число является нечетным");
 }
+
+
+/*Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
+
+5 -> 2, 4
+8 -> 2, 4, 6, 8*/
+
+int module (int b){
+    if (b >= 0) {
+        return b;
+    }
+    else {
+        return (b * (-1));
+    }
+}
+
+Boolean isEven (int b){
+if ((module(b)%2) == 0){
+    return true;
+}else{
+return false;
+}
+}
+
+Console.WriteLine("Введите число");
+int number = int.Parse(Console.ReadLine());
+if (module(number) < 2){
+    Console.WriteLine("Таких чисел нет");
+}
+if (number == 0){
+    Console.WriteLine("Это ноль");
+}else {
+    if (number > 0){
+        for(int i=2; i<number; i++){
+            if (isEven(i)){
+            Console.Write(i);
+            Console.Write(", ");
+            }
+        }
+        if (isEven(number)){
+        Console.WriteLine(number);
+        }
+    } else {
+        for(int i=-2; i>number; i--){
+            if (isEven(i)){
+            Console.Write(i);
+            Console.Write(", ");
+            }
+        }
+        if (isEven(number)){
+        Console.Write(number);
+        }
+    }
+}
+Console.WriteLine();
